@@ -29,3 +29,16 @@ build-backend = "setuptools.build_meta"
 
 [tool.pylint.'MESSAGES CONTROL']
 extension-pkg-whitelist = "pydantic"
+
+[tool.black]
+line-length = 160
+target-version = ["py311"]
+
+[tool.ruff]
+unfixable = ["B", "SIM", "TRY", "RUF", "D203", "UP", "RET", "TCH"]
+
+fix-only = true
+ignore = ["E501", "D211", "D212", "TID"]
+ignore-init-module-imports = true
+line-length = 160
+target-version = "py311"
