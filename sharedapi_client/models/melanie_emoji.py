@@ -89,7 +89,6 @@ class MelanieEmoji(BaseModel):
         if not isinstance(obj, dict):
             return MelanieEmoji.parse_obj(obj)
 
-        _obj = MelanieEmoji.parse_obj(
+        return MelanieEmoji.parse_obj(
             {"name": obj.get("name"), "id": obj.get("id"), "animated": obj.get("animated"), "url": obj.get("url"), "dispaly_name": obj.get("dispaly_name")},
         )
-        return _obj

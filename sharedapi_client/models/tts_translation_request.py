@@ -68,5 +68,4 @@ class TTSTranslationRequest(BaseModel):
         if not isinstance(obj, dict):
             return TTSTranslationRequest.parse_obj(obj)
 
-        _obj = TTSTranslationRequest.parse_obj({"text": obj.get("text"), "speaker_name": obj.get("speaker_name")})
-        return _obj
+        return TTSTranslationRequest.parse_obj({"text": obj.get("text"), "speaker_name": obj.get("speaker_name")})

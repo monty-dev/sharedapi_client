@@ -77,5 +77,4 @@ class UserProfile(BaseModel):
         if not isinstance(obj, dict):
             return UserProfile.parse_obj(obj)
 
-        _obj = UserProfile.parse_obj({"bio": obj.get("bio"), "accent_color": obj.get("accent_color"), "banner": obj.get("banner")})
-        return _obj
+        return UserProfile.parse_obj({"bio": obj.get("bio"), "accent_color": obj.get("accent_color"), "banner": obj.get("banner")})

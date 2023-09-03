@@ -95,7 +95,7 @@ class TikTokTopVideoItem(BaseModel):
         if not isinstance(obj, dict):
             return TikTokTopVideoItem.parse_obj(obj)
 
-        _obj = TikTokTopVideoItem.parse_obj(
+        return TikTokTopVideoItem.parse_obj(
             {
                 "title": obj.get("title"),
                 "plays": obj.get("plays"),
@@ -105,4 +105,3 @@ class TikTokTopVideoItem(BaseModel):
                 "id": obj.get("id"),
             },
         )
-        return _obj

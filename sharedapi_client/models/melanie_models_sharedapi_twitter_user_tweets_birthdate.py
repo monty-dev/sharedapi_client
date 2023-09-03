@@ -83,7 +83,6 @@ class MelanieModelsSharedapiTwitterUserTweetsBirthdate(BaseModel):
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterUserTweetsBirthdate.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterUserTweetsBirthdate.parse_obj(
+        return MelanieModelsSharedapiTwitterUserTweetsBirthdate.parse_obj(
             {"day": obj.get("day"), "month": obj.get("month"), "visibility": obj.get("visibility"), "year_visibility": obj.get("year_visibility")},
         )
-        return _obj

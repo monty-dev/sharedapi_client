@@ -77,5 +77,4 @@ class Avatar(BaseModel):
         if not isinstance(obj, dict):
             return Avatar.parse_obj(obj)
 
-        _obj = Avatar.parse_obj({"image_url": obj.get("image_url"), "initial": obj.get("initial"), "accent_color": obj.get("accent_color")})
-        return _obj
+        return Avatar.parse_obj({"image_url": obj.get("image_url"), "initial": obj.get("initial"), "accent_color": obj.get("accent_color")})

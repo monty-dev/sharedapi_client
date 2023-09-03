@@ -77,5 +77,4 @@ class InstagramHighlightMediaItem(BaseModel):
         if not isinstance(obj, dict):
             return InstagramHighlightMediaItem.parse_obj(obj)
 
-        _obj = InstagramHighlightMediaItem.parse_obj({"taken_at": obj.get("taken_at"), "is_video": obj.get("is_video"), "url": obj.get("url")})
-        return _obj
+        return InstagramHighlightMediaItem.parse_obj({"taken_at": obj.get("taken_at"), "is_video": obj.get("is_video"), "url": obj.get("url")})

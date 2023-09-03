@@ -71,5 +71,4 @@ class Fragment(BaseModel):
         if not isinstance(obj, dict):
             return Fragment.parse_obj(obj)
 
-        _obj = Fragment.parse_obj({"url": obj.get("url"), "duration": obj.get("duration")})
-        return _obj
+        return Fragment.parse_obj({"url": obj.get("url"), "duration": obj.get("duration")})

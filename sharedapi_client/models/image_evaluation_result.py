@@ -89,7 +89,7 @@ class ImageEvaluationResult(BaseModel):
         if not isinstance(obj, dict):
             return ImageEvaluationResult.parse_obj(obj)
 
-        _obj = ImageEvaluationResult.parse_obj(
+        return ImageEvaluationResult.parse_obj(
             {
                 "adult": obj.get("adult"),
                 "racy": obj.get("racy"),
@@ -98,4 +98,3 @@ class ImageEvaluationResult(BaseModel):
                 "advanced_info": obj.get("advanced_info"),
             },
         )
-        return _obj

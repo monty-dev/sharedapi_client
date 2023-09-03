@@ -71,5 +71,4 @@ class PinterestReverseResponse(BaseModel):
         if not isinstance(obj, dict):
             return PinterestReverseResponse.parse_obj(obj)
 
-        _obj = PinterestReverseResponse.parse_obj({"message": obj.get("message"), "items": obj.get("items")})
-        return _obj
+        return PinterestReverseResponse.parse_obj({"message": obj.get("message"), "items": obj.get("items")})

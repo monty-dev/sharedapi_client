@@ -200,7 +200,7 @@ class ValorantProfileResponse(BaseModel):
         if not isinstance(obj, dict):
             return ValorantProfileResponse.parse_obj(obj)
 
-        _obj = ValorantProfileResponse.parse_obj(
+        return ValorantProfileResponse.parse_obj(
             {
                 "name": obj.get("name"),
                 "tag": obj.get("tag"),
@@ -224,4 +224,3 @@ class ValorantProfileResponse(BaseModel):
                 "last_update": obj.get("last_update"),
             },
         )
-        return _obj

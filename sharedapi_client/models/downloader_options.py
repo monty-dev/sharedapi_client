@@ -65,5 +65,4 @@ class DownloaderOptions(BaseModel):
         if not isinstance(obj, dict):
             return DownloaderOptions.parse_obj(obj)
 
-        _obj = DownloaderOptions.parse_obj({"http_chunk_size": obj.get("http_chunk_size")})
-        return _obj
+        return DownloaderOptions.parse_obj({"http_chunk_size": obj.get("http_chunk_size")})

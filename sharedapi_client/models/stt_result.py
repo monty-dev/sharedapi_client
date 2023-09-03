@@ -95,7 +95,7 @@ class STTResult(BaseModel):
         if not isinstance(obj, dict):
             return STTResult.parse_obj(obj)
 
-        _obj = STTResult.parse_obj(
+        return STTResult.parse_obj(
             {
                 "status": obj.get("status"),
                 "display_text": obj.get("display_text"),
@@ -105,4 +105,3 @@ class STTResult(BaseModel):
                 "translated_text": obj.get("translated_text"),
             },
         )
-        return _obj

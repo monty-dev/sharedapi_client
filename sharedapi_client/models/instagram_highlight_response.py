@@ -89,7 +89,7 @@ class InstagramHighlightResponse(BaseModel):
         if not isinstance(obj, dict):
             return InstagramHighlightResponse.parse_obj(obj)
 
-        _obj = InstagramHighlightResponse.parse_obj(
+        return InstagramHighlightResponse.parse_obj(
             {
                 "id": obj.get("id"),
                 "created_at": obj.get("created_at"),
@@ -98,4 +98,3 @@ class InstagramHighlightResponse(BaseModel):
                 "items": obj.get("items"),
             },
         )
-        return _obj

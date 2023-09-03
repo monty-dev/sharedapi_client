@@ -144,7 +144,7 @@ class TikTokUserProfileResponse(BaseModel):
         if not isinstance(obj, dict):
             return TikTokUserProfileResponse.parse_obj(obj)
 
-        _obj = TikTokUserProfileResponse.parse_obj(
+        return TikTokUserProfileResponse.parse_obj(
             {
                 "avatar_url": obj.get("avatar_url"),
                 "digg_count": obj.get("digg_count"),
@@ -160,4 +160,3 @@ class TikTokUserProfileResponse(BaseModel):
                 "signature": obj.get("signature"),
             },
         )
-        return _obj

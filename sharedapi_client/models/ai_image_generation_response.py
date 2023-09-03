@@ -71,5 +71,4 @@ class AIImageGenerationResponse(BaseModel):
         if not isinstance(obj, dict):
             return AIImageGenerationResponse.parse_obj(obj)
 
-        _obj = AIImageGenerationResponse.parse_obj({"url": obj.get("url"), "idea": obj.get("idea")})
-        return _obj
+        return AIImageGenerationResponse.parse_obj({"url": obj.get("url"), "idea": obj.get("idea")})

@@ -151,7 +151,7 @@ class PinterestReverseItem(BaseModel):
         if not isinstance(obj, dict):
             return PinterestReverseItem.parse_obj(obj)
 
-        _obj = PinterestReverseItem.parse_obj(
+        return PinterestReverseItem.parse_obj(
             {
                 "is_uploaded": obj.get("is_uploaded"),
                 "image_large_url": obj.get("image_large_url"),
@@ -168,4 +168,3 @@ class PinterestReverseItem(BaseModel):
                 "created_at": obj.get("created_at"),
             },
         )
-        return _obj

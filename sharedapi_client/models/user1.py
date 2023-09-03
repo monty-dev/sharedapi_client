@@ -95,7 +95,7 @@ class User1(BaseModel):
         if not isinstance(obj, dict):
             return User1.parse_obj(obj)
 
-        _obj = User1.parse_obj(
+        return User1.parse_obj(
             {
                 "id": obj.get("id"),
                 "username": obj.get("username"),
@@ -105,4 +105,3 @@ class User1(BaseModel):
                 "public_flags": obj.get("public_flags"),
             },
         )
-        return _obj

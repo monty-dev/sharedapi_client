@@ -46,8 +46,7 @@ class PuppeteerLoadMethod(BaseModel):
 
     def to_dict(self):
         """Returns the dictionary representation of the model using alias."""
-        _dict = self.dict(by_alias=True, exclude={}, exclude_none=True)
-        return _dict
+        return self.dict(by_alias=True, exclude={}, exclude_none=True)
 
     @classmethod
     def from_dict(cls, obj: dict) -> PuppeteerLoadMethod:
@@ -58,5 +57,4 @@ class PuppeteerLoadMethod(BaseModel):
         if not isinstance(obj, dict):
             return PuppeteerLoadMethod.parse_obj(obj)
 
-        _obj = PuppeteerLoadMethod.parse_obj({})
-        return _obj
+        return PuppeteerLoadMethod.parse_obj({})

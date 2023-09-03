@@ -125,7 +125,7 @@ class BioUser(BaseModel):
         if not isinstance(obj, dict):
             return BioUser.parse_obj(obj)
 
-        _obj = BioUser.parse_obj(
+        return BioUser.parse_obj(
             {
                 "id": obj.get("id"),
                 "username": obj.get("username"),
@@ -140,4 +140,3 @@ class BioUser(BaseModel):
                 "bio": obj.get("bio"),
             },
         )
-        return _obj

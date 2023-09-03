@@ -137,13 +137,22 @@ class TiktokApi:
         """
         _params = locals()
 
-        _all_params = ["tiktok_post_request", "user_id"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "tiktok_post_request",
+            "user_id",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method download_tik_tok_post" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method download_tik_tok_post"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -170,9 +179,7 @@ class TiktokApi:
         # set the HTTP header `Accept`
         _header_params["Accept"] = self.api_client.select_header_accept(["application/json"])  # noqa: E501
 
-        # set the HTTP header `Content-Type`
-        _content_types_list = _params.get("_content_type", self.api_client.select_header_content_type(["application/json"]))
-        if _content_types_list:
+        if _content_types_list := _params.get("_content_type", self.api_client.select_header_content_type(["application/json"])):
             _header_params["Content-Type"] = _content_types_list
 
         # authentication setting
@@ -294,13 +301,22 @@ class TiktokApi:
         """
         _params = locals()
 
-        _all_params = ["username", "limit"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "username",
+            "limit",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method fetch_user_top_tik_toks" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method fetch_user_top_tik_toks"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -434,13 +450,12 @@ class TiktokApi:
         """
         _params = locals()
 
-        _all_params = ["username"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["username", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method get_tik_tok_user" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method get_tik_tok_user"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -571,13 +586,12 @@ class TiktokApi:
         """
         _params = locals()
 
-        _all_params = ["username"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["username", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method getrecentuser_tik_toks" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method getrecentuser_tik_toks"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 

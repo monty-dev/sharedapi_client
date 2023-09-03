@@ -151,7 +151,7 @@ class SnapProfileResponse(BaseModel):
         if not isinstance(obj, dict):
             return SnapProfileResponse.parse_obj(obj)
 
-        _obj = SnapProfileResponse.parse_obj(
+        return SnapProfileResponse.parse_obj(
             {
                 "username": obj.get("username"),
                 "bio": obj.get("bio"),
@@ -168,4 +168,3 @@ class SnapProfileResponse(BaseModel):
                 "spotlight_media": obj.get("spotlight_media"),
             },
         )
-        return _obj

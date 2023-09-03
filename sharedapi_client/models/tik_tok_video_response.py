@@ -196,7 +196,7 @@ class TikTokVideoResponse(BaseModel):
         if not isinstance(obj, dict):
             return TikTokVideoResponse.parse_obj(obj)
 
-        _obj = TikTokVideoResponse.parse_obj(
+        return TikTokVideoResponse.parse_obj(
             {
                 "aweme_id": obj.get("aweme_id"),
                 "avatar_bytes": obj.get("avatar_bytes"),
@@ -220,4 +220,3 @@ class TikTokVideoResponse(BaseModel):
                 "embed_color": obj.get("embed_color"),
             },
         )
-        return _obj

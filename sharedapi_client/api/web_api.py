@@ -121,13 +121,12 @@ class WebApi:
         """
         _params = locals()
 
-        _all_params = ["username"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["username", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method get_cashappprofile" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method get_cashappprofile"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -256,13 +255,12 @@ class WebApi:
         """
         _params = locals()
 
-        _all_params = ["username"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["username", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method get_telegram_u_ser" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method get_telegram_u_ser"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -406,13 +404,12 @@ class WebApi:
         """
         _params = locals()
 
-        _all_params = ["address"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["address", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method i_plookup" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method i_plookup"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -586,13 +583,25 @@ class WebApi:
         """
         _params = locals()
 
-        _all_params = ["playlist_id", "plain", "transform", "name", "clean"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "playlist_id",
+            "plain",
+            "transform",
+            "name",
+            "clean",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method loada_spotifyplaylist" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method loada_spotifyplaylist"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -804,13 +813,28 @@ class WebApi:
         """
         _params = locals()
 
-        _all_params = ["url", "user_id", "safe", "until", "nsfw_check", "full_page", "image_type", "imgerr"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "url",
+            "user_id",
+            "safe",
+            "until",
+            "nsfw_check",
+            "full_page",
+            "image_type",
+            "imgerr",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method screenshotweb" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method screenshotweb"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -956,13 +980,12 @@ class WebApi:
         """
         _params = locals()
 
-        _all_params = ["url"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["url", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method streamaudio" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method streamaudio"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 

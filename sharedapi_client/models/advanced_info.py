@@ -71,5 +71,4 @@ class AdvancedInfo(BaseModel):
         if not isinstance(obj, dict):
             return AdvancedInfo.parse_obj(obj)
 
-        _obj = AdvancedInfo.parse_obj({"key": obj.get("key"), "value": obj.get("value")})
-        return _obj
+        return AdvancedInfo.parse_obj({"key": obj.get("key"), "value": obj.get("value")})

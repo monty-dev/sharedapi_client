@@ -414,7 +414,7 @@ class TwitterUserinfoResult(BaseModel):
         if not isinstance(obj, dict):
             return TwitterUserinfoResult.parse_obj(obj)
 
-        _obj = TwitterUserinfoResult.parse_obj(
+        return TwitterUserinfoResult.parse_obj(
             {
                 "typename": obj.get("__typename"),
                 "id": obj.get("id"),
@@ -477,4 +477,3 @@ class TwitterUserinfoResult(BaseModel):
                 "verified_type": obj.get("verified_type"),
             },
         )
-        return _obj

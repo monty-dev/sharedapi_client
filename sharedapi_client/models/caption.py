@@ -65,5 +65,4 @@ class Caption(BaseModel):
         if not isinstance(obj, dict):
             return Caption.parse_obj(obj)
 
-        _obj = Caption.parse_obj({"text": obj.get("text")})
-        return _obj
+        return Caption.parse_obj({"text": obj.get("text")})

@@ -83,7 +83,7 @@ class InstagramPostResponse(BaseModel):
         if not isinstance(obj, dict):
             return InstagramPostResponse.parse_obj(obj)
 
-        _obj = InstagramPostResponse.parse_obj(
+        return InstagramPostResponse.parse_obj(
             {
                 "num_results": obj.get("num_results"),
                 "share_url": obj.get("share_url"),
@@ -91,4 +91,3 @@ class InstagramPostResponse(BaseModel):
                 "items": obj.get("items"),
             },
         )
-        return _obj

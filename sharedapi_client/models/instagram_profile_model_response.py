@@ -214,7 +214,7 @@ class InstagramProfileModelResponse(BaseModel):
         if not isinstance(obj, dict):
             return InstagramProfileModelResponse.parse_obj(obj)
 
-        _obj = InstagramProfileModelResponse.parse_obj(
+        return InstagramProfileModelResponse.parse_obj(
             {
                 "avatar_filename": obj.get("avatar_filename"),
                 "avatar_url": obj.get("avatar_url"),
@@ -240,4 +240,3 @@ class InstagramProfileModelResponse(BaseModel):
                 "created_at": obj.get("created_at"),
             },
         )
-        return _obj

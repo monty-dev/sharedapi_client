@@ -89,7 +89,7 @@ class BioRequest(BaseModel):
         if not isinstance(obj, dict):
             return BioRequest.parse_obj(obj)
 
-        _obj = BioRequest.parse_obj(
+        return BioRequest.parse_obj(
             {
                 "user_id": obj.get("user_id"),
                 "guild_id": obj.get("guild_id"),
@@ -98,4 +98,3 @@ class BioRequest(BaseModel):
                 "timestamp": obj.get("timestamp"),
             },
         )
-        return _obj

@@ -83,5 +83,4 @@ class Card(BaseModel):
         if not isinstance(obj, dict):
             return Card.parse_obj(obj)
 
-        _obj = Card.parse_obj({"small": obj.get("small"), "large": obj.get("large"), "wide": obj.get("wide"), "id": obj.get("id")})
-        return _obj
+        return Card.parse_obj({"small": obj.get("small"), "large": obj.get("large"), "wide": obj.get("wide"), "id": obj.get("id")})

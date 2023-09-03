@@ -83,7 +83,6 @@ class DeletionConfirmation(BaseModel):
         if not isinstance(obj, dict):
             return DeletionConfirmation.parse_obj(obj)
 
-        _obj = DeletionConfirmation.parse_obj(
+        return DeletionConfirmation.parse_obj(
             {"confirmed": obj.get("confirmed"), "confirmed_by": obj.get("confirmed_by"), "deleted_items": obj.get("deleted_items"), "sig": obj.get("sig")},
         )
-        return _obj

@@ -186,7 +186,7 @@ class InstagramPostItem(BaseModel):
         if not isinstance(obj, dict):
             return InstagramPostItem.parse_obj(obj)
 
-        _obj = InstagramPostItem.parse_obj(
+        return InstagramPostItem.parse_obj(
             {
                 "id": obj.get("id"),
                 "title": obj.get("title"),
@@ -208,4 +208,3 @@ class InstagramPostItem(BaseModel):
                 "preview_image_filename": obj.get("preview_image_filename"),
             },
         )
-        return _obj

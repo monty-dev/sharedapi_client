@@ -69,7 +69,7 @@ class MelanieModelsSharedapiTwitterUserTweetsEntities(BaseModel):
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterUserTweetsEntities.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterUserTweetsEntities.parse_obj(
+        return MelanieModelsSharedapiTwitterUserTweetsEntities.parse_obj(
             {
                 "description": MelanieModelsSharedapiTwitterUserTweetsURLClass.from_dict(obj.get("description"))
                 if obj.get("description") is not None
@@ -77,4 +77,3 @@ class MelanieModelsSharedapiTwitterUserTweetsEntities(BaseModel):
                 "url": MelanieModelsSharedapiTwitterUserTweetsURLClass.from_dict(obj.get("url")) if obj.get("url") is not None else None,
             },
         )
-        return _obj

@@ -77,11 +77,10 @@ class MelanieModelsSharedapiTwitterScreenNameDescriptionEntity(BaseModel):
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterScreenNameDescriptionEntity.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterScreenNameDescriptionEntity.parse_obj(
+        return MelanieModelsSharedapiTwitterScreenNameDescriptionEntity.parse_obj(
             {
                 "from_index": obj.get("from_index"),
                 "to_index": obj.get("to_index"),
                 "ref": MelanieModelsSharedapiTwitterScreenNameFluffyRef.from_dict(obj.get("ref")) if obj.get("ref") is not None else None,
             },
         )
-        return _obj

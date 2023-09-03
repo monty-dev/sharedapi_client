@@ -83,7 +83,6 @@ class GuildMemberProfile(BaseModel):
         if not isinstance(obj, dict):
             return GuildMemberProfile.parse_obj(obj)
 
-        _obj = GuildMemberProfile.parse_obj(
+        return GuildMemberProfile.parse_obj(
             {"guild_id": obj.get("guild_id"), "bio": obj.get("bio"), "banner": obj.get("banner"), "accent_color": obj.get("accent_color")},
         )
-        return _obj

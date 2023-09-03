@@ -83,5 +83,4 @@ class ConnectedAccount(BaseModel):
         if not isinstance(obj, dict):
             return ConnectedAccount.parse_obj(obj)
 
-        _obj = ConnectedAccount.parse_obj({"type": obj.get("type"), "id": obj.get("id"), "name": obj.get("name"), "verified": obj.get("verified")})
-        return _obj
+        return ConnectedAccount.parse_obj({"type": obj.get("type"), "id": obj.get("id"), "name": obj.get("name"), "verified": obj.get("verified")})

@@ -180,7 +180,7 @@ class ApiClient:
 
         # post parameters
         if post_params or files:
-            post_params = post_params if post_params else []
+            post_params = post_params or []
             post_params = self.sanitize_for_serialization(post_params)
             post_params = self.parameters_to_tuples(post_params, collection_formats)
             post_params.extend(self.files_parameters(files))
@@ -280,16 +280,7 @@ class ApiClient:
         elif isinstance(obj, (datetime.datetime, datetime.date)):
             return obj.isoformat()
 
-        if isinstance(obj, dict):
-            obj_dict = obj
-        else:
-            # Convert model obj to dict except
-            # attributes `openapi_types`, `attribute_map`
-            # and attributes which value is not None.
-            # Convert attribute name to json key in
-            # model definition for request.
-            obj_dict = obj.to_dict()
-
+        obj_dict = obj if isinstance(obj, dict) else obj.to_dict()
         return {key: self.sanitize_for_serialization(val) for key, val in obj_dict.items()}
 
     def deserialize(self, response, response_type):
@@ -327,11 +318,11 @@ class ApiClient:
 
         if isinstance(klass, str):
             if klass.startswith("List["):
-                sub_kls = re.match(r"List\[(.*)]", klass).group(1)
+                sub_kls = re.match(r"List\[(.*)]", klass)[1]
                 return [self.__deserialize(sub_data, sub_kls) for sub_data in data]
 
             if klass.startswith("Dict["):
-                sub_kls = re.match(r"Dict\[([^,]*), (.*)]", klass).group(2)
+                sub_kls = re.match(r"Dict\[([^,]*), (.*)]", klass)[2]
                 return {k: self.__deserialize(v, sub_kls) for k, v in data.items()}
 
             # convert str to class
@@ -662,8 +653,7 @@ class ApiClient:
             return
 
         for auth in auth_settings:
-            auth_setting = self.configuration.auth_settings().get(auth)
-            if auth_setting:
+            if auth_setting := self.configuration.auth_settings().get(auth):
                 self._apply_auth_params(headers, queries, resource_path, method, body, auth_setting)
 
     def _apply_auth_params(self, headers, queries, resource_path, method, body, auth_setting):
@@ -701,9 +691,8 @@ class ApiClient:
         os.close(fd)
         os.remove(path)
 
-        content_disposition = response.getheader("Content-Disposition")
-        if content_disposition:
-            filename = re.search(r'filename=[\'"]?([^\'"\s]+)[\'"]?', content_disposition).group(1)
+        if content_disposition := response.getheader("Content-Disposition"):
+            filename = re.search(r'filename=[\'"]?([^\'"\s]+)[\'"]?', content_disposition)[1]
             path = os.path.join(os.path.dirname(path), filename)
 
         with open(path, "wb") as f:
@@ -743,8 +732,8 @@ class ApiClient:
             return parse(string).date()
         except ImportError:
             return string
-        except ValueError:
-            raise rest.ApiException(status=0, reason="Failed to parse `{0}` as date object".format(string))
+        except ValueError as e:
+            raise rest.ApiException(status=0, reason="Failed to parse `{0}` as date object".format(string)) from e
 
     def __deserialize_datetime(self, string):
         """Deserializes string to datetime.
@@ -758,8 +747,8 @@ class ApiClient:
             return parse(string)
         except ImportError:
             return string
-        except ValueError:
-            raise rest.ApiException(status=0, reason="Failed to parse `{0}` as datetime object".format(string))
+        except ValueError as e:
+            raise rest.ApiException(status=0, reason="Failed to parse `{0}` as datetime object".format(string)) from e
 
     def __deserialize_model(self, data, klass):
         """Deserializes list or dict to model.

@@ -46,8 +46,7 @@ class Speakers(BaseModel):
 
     def to_dict(self):
         """Returns the dictionary representation of the model using alias."""
-        _dict = self.dict(by_alias=True, exclude={}, exclude_none=True)
-        return _dict
+        return self.dict(by_alias=True, exclude={}, exclude_none=True)
 
     @classmethod
     def from_dict(cls, obj: dict) -> Speakers:
@@ -58,5 +57,4 @@ class Speakers(BaseModel):
         if not isinstance(obj, dict):
             return Speakers.parse_obj(obj)
 
-        _obj = Speakers.parse_obj({})
-        return _obj
+        return Speakers.parse_obj({})

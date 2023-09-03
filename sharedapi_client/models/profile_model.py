@@ -120,7 +120,7 @@ class ProfileModel(BaseModel):
         if not isinstance(obj, dict):
             return ProfileModel.parse_obj(obj)
 
-        _obj = ProfileModel.parse_obj(
+        return ProfileModel.parse_obj(
             {
                 "user": DiscordUser.from_dict(obj.get("user")) if obj.get("user") is not None else None,
                 "connected_accounts": obj.get("connected_accounts"),
@@ -133,4 +133,3 @@ class ProfileModel(BaseModel):
                 "guild_member_profile": GuildMemberProfile.from_dict(obj.get("guild_member_profile")) if obj.get("guild_member_profile") is not None else None,
             },
         )
-        return _obj

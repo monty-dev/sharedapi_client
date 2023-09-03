@@ -83,5 +83,4 @@ class LiveChat(BaseModel):
         if not isinstance(obj, dict):
             return LiveChat.parse_obj(obj)
 
-        _obj = LiveChat.parse_obj({"url": obj.get("url"), "video_id": obj.get("video_id"), "ext": obj.get("ext"), "protocol": obj.get("protocol")})
-        return _obj
+        return LiveChat.parse_obj({"url": obj.get("url"), "video_id": obj.get("video_id"), "ext": obj.get("ext"), "protocol": obj.get("protocol")})

@@ -95,7 +95,7 @@ class StoryItem(BaseModel):
         if not isinstance(obj, dict):
             return StoryItem.parse_obj(obj)
 
-        _obj = StoryItem.parse_obj(
+        return StoryItem.parse_obj(
             {
                 "id": obj.get("id"),
                 "is_video": obj.get("is_video"),
@@ -105,4 +105,3 @@ class StoryItem(BaseModel):
                 "video_bytes": obj.get("video_bytes"),
             },
         )
-        return _obj

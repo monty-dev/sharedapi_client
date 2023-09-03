@@ -65,5 +65,4 @@ class ColorPalette(BaseModel):
         if not isinstance(obj, dict):
             return ColorPalette.parse_obj(obj)
 
-        _obj = ColorPalette.parse_obj({"colors": obj.get("colors")})
-        return _obj
+        return ColorPalette.parse_obj({"colors": obj.get("colors")})

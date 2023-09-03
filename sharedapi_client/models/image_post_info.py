@@ -65,5 +65,4 @@ class ImagePostInfo(BaseModel):
         if not isinstance(obj, dict):
             return ImagePostInfo.parse_obj(obj)
 
-        _obj = ImagePostInfo.parse_obj({"images": obj.get("images")})
-        return _obj
+        return ImagePostInfo.parse_obj({"images": obj.get("images")})

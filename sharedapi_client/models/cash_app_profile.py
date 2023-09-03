@@ -101,7 +101,7 @@ class CashAppProfile(BaseModel):
         if not isinstance(obj, dict):
             return CashAppProfile.parse_obj(obj)
 
-        _obj = CashAppProfile.parse_obj(
+        return CashAppProfile.parse_obj(
             {
                 "display_name": obj.get("display_name"),
                 "formatted_cashtag": obj.get("formatted_cashtag"),
@@ -112,4 +112,3 @@ class CashAppProfile(BaseModel):
                 "avatar": Avatar.from_dict(obj.get("avatar")) if obj.get("avatar") is not None else None,
             },
         )
-        return _obj

@@ -95,7 +95,7 @@ class UserPostItem(BaseModel):
         if not isinstance(obj, dict):
             return UserPostItem.parse_obj(obj)
 
-        _obj = UserPostItem.parse_obj(
+        return UserPostItem.parse_obj(
             {
                 "id": obj.get("id"),
                 "shortcode": obj.get("shortcode"),
@@ -105,4 +105,3 @@ class UserPostItem(BaseModel):
                 "title": obj.get("title"),
             },
         )
-        return _obj

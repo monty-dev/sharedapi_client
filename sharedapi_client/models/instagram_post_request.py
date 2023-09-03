@@ -77,5 +77,4 @@ class InstagramPostRequest(BaseModel):
         if not isinstance(obj, dict):
             return InstagramPostRequest.parse_obj(obj)
 
-        _obj = InstagramPostRequest.parse_obj({"content": obj.get("content"), "user_id": obj.get("user_id"), "guild_id": obj.get("guild_id")})
-        return _obj
+        return InstagramPostRequest.parse_obj({"content": obj.get("content"), "user_id": obj.get("user_id"), "guild_id": obj.get("guild_id")})

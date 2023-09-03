@@ -131,7 +131,7 @@ class GuildMember(BaseModel):
         if not isinstance(obj, dict):
             return GuildMember.parse_obj(obj)
 
-        _obj = GuildMember.parse_obj(
+        return GuildMember.parse_obj(
             {
                 "flags": obj.get("flags"),
                 "is_pending": obj.get("is_pending"),
@@ -147,4 +147,3 @@ class GuildMember(BaseModel):
                 "deaf": obj.get("deaf"),
             },
         )
-        return _obj

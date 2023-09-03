@@ -71,5 +71,4 @@ class OCRReadResponse(BaseModel):
         if not isinstance(obj, dict):
             return OCRReadResponse.parse_obj(obj)
 
-        _obj = OCRReadResponse.parse_obj({"display_text": obj.get("display_text"), "lines": obj.get("lines")})
-        return _obj
+        return OCRReadResponse.parse_obj({"display_text": obj.get("display_text"), "lines": obj.get("lines")})

@@ -71,5 +71,4 @@ class CountryFlag(BaseModel):
         if not isinstance(obj, dict):
             return CountryFlag.parse_obj(obj)
 
-        _obj = CountryFlag.parse_obj({"emoji": obj.get("emoji"), "unicode": obj.get("unicode")})
-        return _obj
+        return CountryFlag.parse_obj({"emoji": obj.get("emoji"), "unicode": obj.get("unicode")})

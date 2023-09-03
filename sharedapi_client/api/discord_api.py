@@ -124,13 +124,22 @@ class DiscordApi:
         """
         _params = locals()
 
-        _all_params = ["user_id", "guild_id"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "user_id",
+            "guild_id",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method fetch_discord_bio" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method fetch_discord_bio"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -263,13 +272,21 @@ class DiscordApi:
         """
         _params = locals()
 
-        _all_params = ["channel_id"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "channel_id",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method issue_clear_snipe" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method issue_clear_snipe"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 

@@ -65,5 +65,4 @@ class MelanieModelsSharedapiTwitterScreenNameURLClass(BaseModel):
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterScreenNameURLClass.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterScreenNameURLClass.parse_obj({"urls": obj.get("urls")})
-        return _obj
+        return MelanieModelsSharedapiTwitterScreenNameURLClass.parse_obj({"urls": obj.get("urls")})

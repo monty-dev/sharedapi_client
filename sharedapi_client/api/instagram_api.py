@@ -129,13 +129,21 @@ class InstagramApi:
         """
         _params = locals()
 
-        _all_params = ["instagram_post_request"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "instagram_post_request",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method download_instagram_post" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method download_instagram_post"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -159,9 +167,7 @@ class InstagramApi:
         # set the HTTP header `Accept`
         _header_params["Accept"] = self.api_client.select_header_accept(["application/json"])  # noqa: E501
 
-        # set the HTTP header `Content-Type`
-        _content_types_list = _params.get("_content_type", self.api_client.select_header_content_type(["application/json"]))
-        if _content_types_list:
+        if _content_types_list := _params.get("_content_type", self.api_client.select_header_content_type(["application/json"])):
             _header_params["Content-Type"] = _content_types_list
 
         # authentication setting
@@ -293,13 +299,22 @@ class InstagramApi:
         """
         _params = locals()
 
-        _all_params = ["username", "force"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "username",
+            "force",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method fetch_stories" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method fetch_stories"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -444,13 +459,22 @@ class InstagramApi:
         """
         _params = locals()
 
-        _all_params = ["highlight_id", "force"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "highlight_id",
+            "force",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method get_highlightby_id" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method get_highlightby_id"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -584,13 +608,12 @@ class InstagramApi:
         """
         _params = locals()
 
-        _all_params = ["username"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["username", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method get_highlights" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method get_highlights"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -750,13 +773,23 @@ class InstagramApi:
         """
         _params = locals()
 
-        _all_params = ["username", "force", "preload_posts"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "username",
+            "force",
+            "preload_posts",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method get_instagram_user" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method get_instagram_user"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 

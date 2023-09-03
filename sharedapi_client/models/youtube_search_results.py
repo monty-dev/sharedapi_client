@@ -65,5 +65,4 @@ class YoutubeSearchResults(BaseModel):
         if not isinstance(obj, dict):
             return YoutubeSearchResults.parse_obj(obj)
 
-        _obj = YoutubeSearchResults.parse_obj({"results": obj.get("results")})
-        return _obj
+        return YoutubeSearchResults.parse_obj({"results": obj.get("results")})

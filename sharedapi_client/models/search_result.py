@@ -604,7 +604,7 @@ class SearchResult(BaseModel):
         if not isinstance(obj, dict):
             return SearchResult.parse_obj(obj)
 
-        _obj = SearchResult.parse_obj(
+        return SearchResult.parse_obj(
             {
                 "id": obj.get("id"),
                 "title": obj.get("title"),
@@ -685,4 +685,3 @@ class SearchResult(BaseModel):
                 "http_headers": HttpHeaders1.from_dict(obj.get("http_headers")) if obj.get("http_headers") is not None else None,
             },
         )
-        return _obj

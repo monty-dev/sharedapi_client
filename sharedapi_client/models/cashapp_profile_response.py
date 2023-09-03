@@ -71,7 +71,6 @@ class CashappProfileResponse(BaseModel):
         if not isinstance(obj, dict):
             return CashappProfileResponse.parse_obj(obj)
 
-        _obj = CashappProfileResponse.parse_obj(
+        return CashappProfileResponse.parse_obj(
             {"profile": CashAppProfile.from_dict(obj.get("profile")) if obj.get("profile") is not None else None, "qr_image_url": obj.get("qr_image_url")},
         )
-        return _obj

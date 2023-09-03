@@ -83,5 +83,4 @@ class Music(BaseModel):
         if not isinstance(obj, dict):
             return Music.parse_obj(obj)
 
-        _obj = Music.parse_obj({"duration": obj.get("duration"), "album": obj.get("album"), "id": obj.get("id"), "title": obj.get("title")})
-        return _obj
+        return Music.parse_obj({"duration": obj.get("duration"), "album": obj.get("album"), "id": obj.get("id"), "title": obj.get("title")})

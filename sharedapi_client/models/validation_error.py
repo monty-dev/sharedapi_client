@@ -77,5 +77,4 @@ class ValidationError(BaseModel):
         if not isinstance(obj, dict):
             return ValidationError.parse_obj(obj)
 
-        _obj = ValidationError.parse_obj({"loc": obj.get("loc"), "msg": obj.get("msg"), "type": obj.get("type")})
-        return _obj
+        return ValidationError.parse_obj({"loc": obj.get("loc"), "msg": obj.get("msg"), "type": obj.get("type")})

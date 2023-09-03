@@ -127,13 +127,22 @@ class RobloxApi:
         """
         _params = locals()
 
-        _all_params = ["username", "user_id"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "username",
+            "user_id",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method get_robloxuser" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method get_robloxuser"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 

@@ -77,11 +77,10 @@ class TiktokTopUserVideoResults(BaseModel):
         if not isinstance(obj, dict):
             return TiktokTopUserVideoResults.parse_obj(obj)
 
-        _obj = TiktokTopUserVideoResults.parse_obj(
+        return TiktokTopUserVideoResults.parse_obj(
             {
                 "count": obj.get("count"),
                 "author": TikTokUserProfileResponse.from_dict(obj.get("author")) if obj.get("author") is not None else None,
                 "items": obj.get("items"),
             },
         )
-        return _obj

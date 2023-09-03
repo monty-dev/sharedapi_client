@@ -83,7 +83,7 @@ class ActivityAsset(BaseModel):
         if not isinstance(obj, dict):
             return ActivityAsset.parse_obj(obj)
 
-        _obj = ActivityAsset.parse_obj(
+        return ActivityAsset.parse_obj(
             {
                 "small_text": obj.get("small_text"),
                 "large_text": obj.get("large_text"),
@@ -91,4 +91,3 @@ class ActivityAsset(BaseModel):
                 "large_image": obj.get("large_image"),
             },
         )
-        return _obj

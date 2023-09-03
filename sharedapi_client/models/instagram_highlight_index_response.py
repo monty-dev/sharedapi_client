@@ -71,5 +71,4 @@ class InstagramHighlightIndexResponse(BaseModel):
         if not isinstance(obj, dict):
             return InstagramHighlightIndexResponse.parse_obj(obj)
 
-        _obj = InstagramHighlightIndexResponse.parse_obj({"count": obj.get("count"), "highlights": obj.get("highlights")})
-        return _obj
+        return InstagramHighlightIndexResponse.parse_obj({"count": obj.get("count"), "highlights": obj.get("highlights")})

@@ -77,5 +77,4 @@ class IpScamScore(BaseModel):
         if not isinstance(obj, dict):
             return IpScamScore.parse_obj(obj)
 
-        _obj = IpScamScore.parse_obj({"ip": obj.get("ip"), "score": obj.get("score"), "risk": obj.get("risk")})
-        return _obj
+        return IpScamScore.parse_obj({"ip": obj.get("ip"), "score": obj.get("score"), "risk": obj.get("risk")})

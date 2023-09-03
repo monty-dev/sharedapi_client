@@ -83,5 +83,4 @@ class GatewayUserStatus(BaseModel):
         if not isinstance(obj, dict):
             return GatewayUserStatus.parse_obj(obj)
 
-        _obj = GatewayUserStatus.parse_obj({"primary": obj.get("primary"), "desktop": obj.get("desktop"), "mobile": obj.get("mobile"), "web": obj.get("web")})
-        return _obj
+        return GatewayUserStatus.parse_obj({"primary": obj.get("primary"), "desktop": obj.get("desktop"), "mobile": obj.get("mobile"), "web": obj.get("web")})

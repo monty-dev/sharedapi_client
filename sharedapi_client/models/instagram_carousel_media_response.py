@@ -89,7 +89,7 @@ class InstagramCarouselMediaResponse(BaseModel):
         if not isinstance(obj, dict):
             return InstagramCarouselMediaResponse.parse_obj(obj)
 
-        _obj = InstagramCarouselMediaResponse.parse_obj(
+        return InstagramCarouselMediaResponse.parse_obj(
             {
                 "url": obj.get("url"),
                 "preview_image_url": obj.get("preview_image_url"),
@@ -98,4 +98,3 @@ class InstagramCarouselMediaResponse(BaseModel):
                 "filename": obj.get("filename"),
             },
         )
-        return _obj

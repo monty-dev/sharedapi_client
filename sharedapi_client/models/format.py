@@ -297,7 +297,7 @@ class Format(BaseModel):
         if not isinstance(obj, dict):
             return Format.parse_obj(obj)
 
-        _obj = Format.parse_obj(
+        return Format.parse_obj(
             {
                 "format_id": obj.get("format_id"),
                 "format_note": obj.get("format_note"),
@@ -335,4 +335,3 @@ class Format(BaseModel):
                 "filesize_approx": obj.get("filesize_approx"),
             },
         )
-        return _obj

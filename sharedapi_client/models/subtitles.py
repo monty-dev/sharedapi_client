@@ -65,5 +65,4 @@ class Subtitles(BaseModel):
         if not isinstance(obj, dict):
             return Subtitles.parse_obj(obj)
 
-        _obj = Subtitles.parse_obj({"live_chat": obj.get("live_chat")})
-        return _obj
+        return Subtitles.parse_obj({"live_chat": obj.get("live_chat")})

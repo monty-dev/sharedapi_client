@@ -71,5 +71,4 @@ class Author(BaseModel):
         if not isinstance(obj, dict):
             return Author.parse_obj(obj)
 
-        _obj = Author.parse_obj({"avatar_thumb": obj.get("avatar_thumb"), "unique_id": obj.get("unique_id")})
-        return _obj
+        return Author.parse_obj({"avatar_thumb": obj.get("avatar_thumb"), "unique_id": obj.get("unique_id")})

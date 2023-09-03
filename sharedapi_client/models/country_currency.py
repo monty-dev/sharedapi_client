@@ -71,5 +71,4 @@ class CountryCurrency(BaseModel):
         if not isinstance(obj, dict):
             return CountryCurrency.parse_obj(obj)
 
-        _obj = CountryCurrency.parse_obj({"code": obj.get("code"), "symbol": obj.get("symbol")})
-        return _obj
+        return CountryCurrency.parse_obj({"code": obj.get("code"), "symbol": obj.get("symbol")})

@@ -95,7 +95,7 @@ class BannerType(BaseModel):
         if not isinstance(obj, dict):
             return BannerType.parse_obj(obj)
 
-        _obj = BannerType.parse_obj(
+        return BannerType.parse_obj(
             {
                 "banner": obj.get("banner"),
                 "url": obj.get("url"),
@@ -105,4 +105,3 @@ class BannerType(BaseModel):
                 "user_id": obj.get("user_id"),
             },
         )
-        return _obj

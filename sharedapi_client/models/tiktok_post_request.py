@@ -65,5 +65,4 @@ class TiktokPostRequest(BaseModel):
         if not isinstance(obj, dict):
             return TiktokPostRequest.parse_obj(obj)
 
-        _obj = TiktokPostRequest.parse_obj({"url": obj.get("url")})
-        return _obj
+        return TiktokPostRequest.parse_obj({"url": obj.get("url")})

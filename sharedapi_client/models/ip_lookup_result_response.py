@@ -149,7 +149,7 @@ class IPLookupResultResponse(BaseModel):
         if not isinstance(obj, dict):
             return IPLookupResultResponse.parse_obj(obj)
 
-        _obj = IPLookupResultResponse.parse_obj(
+        return IPLookupResultResponse.parse_obj(
             {
                 "ip": obj.get("ip"),
                 "fraud_score": IpScamScore.from_dict(obj.get("fraud_score")) if obj.get("fraud_score") is not None else None,
@@ -166,4 +166,3 @@ class IPLookupResultResponse(BaseModel):
                 "timezone": obj.get("timezone"),
             },
         )
-        return _obj

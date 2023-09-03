@@ -101,7 +101,7 @@ class PinterestProfileResponse(BaseModel):
         if not isinstance(obj, dict):
             return PinterestProfileResponse.parse_obj(obj)
 
-        _obj = PinterestProfileResponse.parse_obj(
+        return PinterestProfileResponse.parse_obj(
             {
                 "username": obj.get("username"),
                 "description": obj.get("description"),
@@ -112,4 +112,3 @@ class PinterestProfileResponse(BaseModel):
                 "avatar_url": obj.get("avatar_url"),
             },
         )
-        return _obj

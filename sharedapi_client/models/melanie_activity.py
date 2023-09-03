@@ -148,7 +148,7 @@ class MelanieActivity(BaseModel):
         if not isinstance(obj, dict):
             return MelanieActivity.parse_obj(obj)
 
-        _obj = MelanieActivity.parse_obj(
+        return MelanieActivity.parse_obj(
             {
                 "name": obj.get("name"),
                 "primary": obj.get("primary"),
@@ -165,4 +165,3 @@ class MelanieActivity(BaseModel):
                 "session_id": obj.get("session_id"),
             },
         )
-        return _obj

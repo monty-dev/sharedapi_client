@@ -125,7 +125,7 @@ class DiscordUser(BaseModel):
         if not isinstance(obj, dict):
             return DiscordUser.parse_obj(obj)
 
-        _obj = DiscordUser.parse_obj(
+        return DiscordUser.parse_obj(
             {
                 "id": obj.get("id"),
                 "username": obj.get("username"),
@@ -140,4 +140,3 @@ class DiscordUser(BaseModel):
                 "bio": obj.get("bio"),
             },
         )
-        return _obj

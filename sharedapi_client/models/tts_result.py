@@ -65,5 +65,4 @@ class TTSResult(BaseModel):
         if not isinstance(obj, dict):
             return TTSResult.parse_obj(obj)
 
-        _obj = TTSResult.parse_obj({"url": obj.get("url")})
-        return _obj
+        return TTSResult.parse_obj({"url": obj.get("url")})

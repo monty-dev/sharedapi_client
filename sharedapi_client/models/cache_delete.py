@@ -71,5 +71,4 @@ class CacheDelete(BaseModel):
         if not isinstance(obj, dict):
             return CacheDelete.parse_obj(obj)
 
-        _obj = CacheDelete.parse_obj({"redis": obj.get("redis"), "disk": obj.get("disk")})
-        return _obj
+        return CacheDelete.parse_obj({"redis": obj.get("redis"), "disk": obj.get("disk")})

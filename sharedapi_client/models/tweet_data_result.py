@@ -191,7 +191,7 @@ class TweetDataResult(BaseModel):
         if not isinstance(obj, dict):
             return TweetDataResult.parse_obj(obj)
 
-        _obj = TweetDataResult.parse_obj(
+        return TweetDataResult.parse_obj(
             {
                 "typename": obj.get("__typename"),
                 "id": obj.get("id"),
@@ -222,4 +222,3 @@ class TweetDataResult(BaseModel):
                 "reason": obj.get("reason"),
             },
         )
-        return _obj

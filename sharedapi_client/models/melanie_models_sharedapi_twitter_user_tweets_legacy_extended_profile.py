@@ -65,7 +65,6 @@ class MelanieModelsSharedapiTwitterUserTweetsLegacyExtendedProfile(BaseModel):
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterUserTweetsLegacyExtendedProfile.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterUserTweetsLegacyExtendedProfile.parse_obj(
+        return MelanieModelsSharedapiTwitterUserTweetsLegacyExtendedProfile.parse_obj(
             {"birthdate": MelanieModelsSharedapiTwitterUserTweetsBirthdate.from_dict(obj.get("birthdate")) if obj.get("birthdate") is not None else None},
         )
-        return _obj

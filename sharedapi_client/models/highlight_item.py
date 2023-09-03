@@ -77,5 +77,4 @@ class HighlightItem(BaseModel):
         if not isinstance(obj, dict):
             return HighlightItem.parse_obj(obj)
 
-        _obj = HighlightItem.parse_obj({"preview_img": obj.get("preview_img"), "title": obj.get("title"), "id": obj.get("id")})
-        return _obj
+        return HighlightItem.parse_obj({"preview_img": obj.get("preview_img"), "title": obj.get("title"), "id": obj.get("id")})

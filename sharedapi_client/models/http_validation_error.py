@@ -65,5 +65,4 @@ class HTTPValidationError(BaseModel):
         if not isinstance(obj, dict):
             return HTTPValidationError.parse_obj(obj)
 
-        _obj = HTTPValidationError.parse_obj({"detail": obj.get("detail")})
-        return _obj
+        return HTTPValidationError.parse_obj({"detail": obj.get("detail")})

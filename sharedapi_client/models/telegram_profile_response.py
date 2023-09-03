@@ -89,7 +89,7 @@ class TelegramProfileResponse(BaseModel):
         if not isinstance(obj, dict):
             return TelegramProfileResponse.parse_obj(obj)
 
-        _obj = TelegramProfileResponse.parse_obj(
+        return TelegramProfileResponse.parse_obj(
             {
                 "username": obj.get("username"),
                 "name": obj.get("name"),
@@ -98,4 +98,3 @@ class TelegramProfileResponse(BaseModel):
                 "avatar_url": obj.get("avatar_url"),
             },
         )
-        return _obj

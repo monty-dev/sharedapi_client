@@ -83,7 +83,7 @@ class HttpHeaders(BaseModel):
         if not isinstance(obj, dict):
             return HttpHeaders.parse_obj(obj)
 
-        _obj = HttpHeaders.parse_obj(
+        return HttpHeaders.parse_obj(
             {
                 "user_agent": obj.get("User-Agent"),
                 "accept": obj.get("Accept"),
@@ -91,4 +91,3 @@ class HttpHeaders(BaseModel):
                 "sec_fetch_mode": obj.get("Sec-Fetch-Mode"),
             },
         )
-        return _obj

@@ -95,7 +95,7 @@ class Thumbnail(BaseModel):
         if not isinstance(obj, dict):
             return Thumbnail.parse_obj(obj)
 
-        _obj = Thumbnail.parse_obj(
+        return Thumbnail.parse_obj(
             {
                 "url": obj.get("url"),
                 "preference": obj.get("preference"),
@@ -105,4 +105,3 @@ class Thumbnail(BaseModel):
                 "resolution": obj.get("resolution"),
             },
         )
-        return _obj

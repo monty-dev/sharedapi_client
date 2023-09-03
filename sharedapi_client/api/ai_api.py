@@ -131,13 +131,12 @@ class AiApi:
         """
         _params = locals()
 
-        _all_params = ["idea"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["idea", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method createartwithdalle2" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method createartwithdalle2"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -278,13 +277,12 @@ class AiApi:
         """
         _params = locals()
 
-        _all_params = ["idea"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["idea", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method createcyberpunkavatar" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method createcyberpunkavatar"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -429,13 +427,12 @@ class AiApi:
         """
         _params = locals()
 
-        _all_params = ["idea"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["idea", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method createfantasyartavatar" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method createfantasyartavatar"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -576,13 +573,12 @@ class AiApi:
         """
         _params = locals()
 
-        _all_params = ["idea"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["idea", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method createpixelavatar" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method createpixelavatar"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -714,13 +710,12 @@ class AiApi:
         """
         _params = locals()
 
-        _all_params = ["url"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["url", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method evaluate_image_safety" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method evaluate_image_safety"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -852,13 +847,21 @@ class AiApi:
         """
         _params = locals()
 
-        _all_params = ["ocr_rquest"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = [
+            "ocr_rquest",
+            "async_req",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+            "_request_auth",
+            "_content_type",
+            "_headers",
+        ]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method read_textfrom_image" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method read_textfrom_image"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 
@@ -874,17 +877,11 @@ class AiApi:
         # process the form parameters
         _form_params = []
         _files = {}
-        # process the body parameter
-        _body_params = None
-        if _params["ocr_rquest"] is not None:
-            _body_params = _params["ocr_rquest"]
-
+        _body_params = None if _params["ocr_rquest"] is None else _params["ocr_rquest"]
         # set the HTTP header `Accept`
         _header_params["Accept"] = self.api_client.select_header_accept(["application/json"])  # noqa: E501
 
-        # set the HTTP header `Content-Type`
-        _content_types_list = _params.get("_content_type", self.api_client.select_header_content_type(["application/json"]))
-        if _content_types_list:
+        if _content_types_list := _params.get("_content_type", self.api_client.select_header_content_type(["application/json"])):
             _header_params["Content-Type"] = _content_types_list
 
         # authentication setting
@@ -990,13 +987,12 @@ class AiApi:
         """
         _params = locals()
 
-        _all_params = ["url"]
-        _all_params.extend(["async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"])
-
+        _all_params = ["url", "async_req", "_return_http_data_only", "_preload_content", "_request_timeout", "_request_auth", "_content_type", "_headers"]
         # validate the arguments
         for _key, _val in _params["kwargs"].items():
             if _key not in _all_params:
-                raise ApiTypeError("Got an unexpected keyword argument '%s' to method removebackgroundsfromimage" % _key)
+                msg = f"Got an unexpected keyword argument '{_key}' to method removebackgroundsfromimage"
+                raise ApiTypeError(msg)
             _params[_key] = _val
         del _params["kwargs"]
 

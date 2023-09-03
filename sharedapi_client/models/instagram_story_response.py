@@ -83,7 +83,7 @@ class InstagramStoryResponse(BaseModel):
         if not isinstance(obj, dict):
             return InstagramStoryResponse.parse_obj(obj)
 
-        _obj = InstagramStoryResponse.parse_obj(
+        return InstagramStoryResponse.parse_obj(
             {
                 "author": InstagramUserResponse.from_dict(obj.get("author")) if obj.get("author") is not None else None,
                 "items": obj.get("items"),
@@ -91,4 +91,3 @@ class InstagramStoryResponse(BaseModel):
                 "created_at": obj.get("created_at"),
             },
         )
-        return _obj

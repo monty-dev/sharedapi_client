@@ -65,5 +65,4 @@ class OCRRquest(BaseModel):
         if not isinstance(obj, dict):
             return OCRRquest.parse_obj(obj)
 
-        _obj = OCRRquest.parse_obj({"url": obj.get("url")})
-        return _obj
+        return OCRRquest.parse_obj({"url": obj.get("url")})

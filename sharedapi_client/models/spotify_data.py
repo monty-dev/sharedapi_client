@@ -107,7 +107,7 @@ class SpotifyData(BaseModel):
         if not isinstance(obj, dict):
             return SpotifyData.parse_obj(obj)
 
-        _obj = SpotifyData.parse_obj(
+        return SpotifyData.parse_obj(
             {
                 "album_cover_url": obj.get("album_cover_url"),
                 "tile": obj.get("tile"),
@@ -119,4 +119,3 @@ class SpotifyData(BaseModel):
                 "duration": obj.get("duration"),
             },
         )
-        return _obj

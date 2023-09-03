@@ -77,11 +77,10 @@ class MelanieModelsSharedapiTwitterUserTweetsUnavailableMessageEntity(BaseModel)
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterUserTweetsUnavailableMessageEntity.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterUserTweetsUnavailableMessageEntity.parse_obj(
+        return MelanieModelsSharedapiTwitterUserTweetsUnavailableMessageEntity.parse_obj(
             {
                 "from_index": obj.get("fromIndex"),
                 "to_index": obj.get("toIndex"),
                 "ref": MelanieModelsSharedapiTwitterUserTweetsPurpleRef.from_dict(obj.get("ref")) if obj.get("ref") is not None else None,
             },
         )
-        return _obj

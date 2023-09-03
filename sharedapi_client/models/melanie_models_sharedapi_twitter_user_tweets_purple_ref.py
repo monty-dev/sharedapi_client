@@ -77,5 +77,4 @@ class MelanieModelsSharedapiTwitterUserTweetsPurpleRef(BaseModel):
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterUserTweetsPurpleRef.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterUserTweetsPurpleRef.parse_obj({"type": obj.get("type"), "url": obj.get("url"), "url_type": obj.get("urlType")})
-        return _obj
+        return MelanieModelsSharedapiTwitterUserTweetsPurpleRef.parse_obj({"type": obj.get("type"), "url": obj.get("url"), "url_type": obj.get("urlType")})

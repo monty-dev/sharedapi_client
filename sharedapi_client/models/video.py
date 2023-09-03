@@ -95,7 +95,7 @@ class Video(BaseModel):
         if not isinstance(obj, dict):
             return Video.parse_obj(obj)
 
-        _obj = Video.parse_obj(
+        return Video.parse_obj(
             {
                 "ratio": obj.get("ratio"),
                 "height": obj.get("height"),
@@ -105,4 +105,3 @@ class Video(BaseModel):
                 "duration": obj.get("duration"),
             },
         )
-        return _obj

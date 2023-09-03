@@ -77,5 +77,4 @@ class VideoIcon(BaseModel):
         if not isinstance(obj, dict):
             return VideoIcon.parse_obj(obj)
 
-        _obj = VideoIcon.parse_obj({"url_list": obj.get("url_list"), "image_width": obj.get("image_width"), "image_height": obj.get("image_height")})
-        return _obj
+        return VideoIcon.parse_obj({"url_list": obj.get("url_list"), "image_width": obj.get("image_width"), "image_height": obj.get("image_height")})

@@ -83,7 +83,7 @@ class Statistics(BaseModel):
         if not isinstance(obj, dict):
             return Statistics.parse_obj(obj)
 
-        _obj = Statistics.parse_obj(
+        return Statistics.parse_obj(
             {
                 "digg_count": obj.get("digg_count"),
                 "play_count": obj.get("play_count"),
@@ -91,4 +91,3 @@ class Statistics(BaseModel):
                 "comment_count": obj.get("comment_count"),
             },
         )
-        return _obj

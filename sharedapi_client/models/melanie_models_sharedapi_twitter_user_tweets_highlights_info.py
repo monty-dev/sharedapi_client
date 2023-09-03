@@ -71,7 +71,6 @@ class MelanieModelsSharedapiTwitterUserTweetsHighlightsInfo(BaseModel):
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterUserTweetsHighlightsInfo.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterUserTweetsHighlightsInfo.parse_obj(
+        return MelanieModelsSharedapiTwitterUserTweetsHighlightsInfo.parse_obj(
             {"can_highlight_tweets": obj.get("can_highlight_tweets"), "highlighted_tweets": obj.get("highlighted_tweets")},
         )
-        return _obj

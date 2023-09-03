@@ -65,5 +65,4 @@ class Image(BaseModel):
         if not isinstance(obj, dict):
             return Image.parse_obj(obj)
 
-        _obj = Image.parse_obj({"display_image": VideoIcon.from_dict(obj.get("display_image")) if obj.get("display_image") is not None else None})
-        return _obj
+        return Image.parse_obj({"display_image": VideoIcon.from_dict(obj.get("display_image")) if obj.get("display_image") is not None else None})

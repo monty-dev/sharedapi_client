@@ -83,5 +83,4 @@ class BadgeItem(BaseModel):
         if not isinstance(obj, dict):
             return BadgeItem.parse_obj(obj)
 
-        _obj = BadgeItem.parse_obj({"id": obj.get("id"), "name": obj.get("name"), "description": obj.get("description"), "image_url": obj.get("image_url")})
-        return _obj
+        return BadgeItem.parse_obj({"id": obj.get("id"), "name": obj.get("name"), "description": obj.get("description"), "image_url": obj.get("image_url")})

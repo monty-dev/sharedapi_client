@@ -165,7 +165,7 @@ class RobloxUserProfileResponse(BaseModel):
         if not isinstance(obj, dict):
             return RobloxUserProfileResponse.parse_obj(obj)
 
-        _obj = RobloxUserProfileResponse.parse_obj(
+        return RobloxUserProfileResponse.parse_obj(
             {
                 "name": obj.get("name"),
                 "follower_count": obj.get("follower_count"),
@@ -184,4 +184,3 @@ class RobloxUserProfileResponse(BaseModel):
                 "previous_names": obj.get("previous_names"),
             },
         )
-        return _obj

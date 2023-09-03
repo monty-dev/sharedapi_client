@@ -71,5 +71,4 @@ class MelanieModelsSharedapiTwitterScreenNameReasonDescription(BaseModel):
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterScreenNameReasonDescription.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterScreenNameReasonDescription.parse_obj({"text": obj.get("text"), "entities": obj.get("entities")})
-        return _obj
+        return MelanieModelsSharedapiTwitterScreenNameReasonDescription.parse_obj({"text": obj.get("text"), "entities": obj.get("entities")})

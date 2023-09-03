@@ -97,7 +97,7 @@ class BioResponse(BaseModel):
         if not isinstance(obj, dict):
             return BioResponse.parse_obj(obj)
 
-        _obj = BioResponse.parse_obj(
+        return BioResponse.parse_obj(
             {
                 "user": BioUser.from_dict(obj.get("user")) if obj.get("user") is not None else None,
                 "profile_data": ProfileModel.from_dict(obj.get("profile_data")) if obj.get("profile_data") is not None else None,
@@ -108,4 +108,3 @@ class BioResponse(BaseModel):
                 "sig": obj.get("sig"),
             },
         )
-        return _obj

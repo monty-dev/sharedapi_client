@@ -95,7 +95,7 @@ class InstagramUserResponse(BaseModel):
         if not isinstance(obj, dict):
             return InstagramUserResponse.parse_obj(obj)
 
-        _obj = InstagramUserResponse.parse_obj(
+        return InstagramUserResponse.parse_obj(
             {
                 "username": obj.get("username"),
                 "full_name": obj.get("full_name"),
@@ -105,4 +105,3 @@ class InstagramUserResponse(BaseModel):
                 "is_verified": obj.get("is_verified"),
             },
         )
-        return _obj

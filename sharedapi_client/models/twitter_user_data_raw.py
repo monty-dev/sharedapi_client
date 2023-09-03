@@ -81,11 +81,10 @@ class TwitterUserDataRaw(BaseModel):
         if not isinstance(obj, dict):
             return TwitterUserDataRaw.parse_obj(obj)
 
-        _obj = TwitterUserDataRaw.parse_obj(
+        return TwitterUserDataRaw.parse_obj(
             {
                 "suspended": obj.get("suspended"),
                 "info": TwitterUserinfoResult.from_dict(obj.get("info")) if obj.get("info") is not None else None,
                 "tweets": TweetDataResult.from_dict(obj.get("tweets")) if obj.get("tweets") is not None else None,
             },
         )
-        return _obj

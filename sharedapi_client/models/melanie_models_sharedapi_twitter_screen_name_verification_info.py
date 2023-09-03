@@ -65,7 +65,6 @@ class MelanieModelsSharedapiTwitterScreenNameVerificationInfo(BaseModel):
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterScreenNameVerificationInfo.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterScreenNameVerificationInfo.parse_obj(
+        return MelanieModelsSharedapiTwitterScreenNameVerificationInfo.parse_obj(
             {"reason": MelanieModelsSharedapiTwitterScreenNameReason.from_dict(obj.get("reason")) if obj.get("reason") is not None else None},
         )
-        return _obj

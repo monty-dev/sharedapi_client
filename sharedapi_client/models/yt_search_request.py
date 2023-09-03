@@ -65,5 +65,4 @@ class YTSearchRequest(BaseModel):
         if not isinstance(obj, dict):
             return YTSearchRequest.parse_obj(obj)
 
-        _obj = YTSearchRequest.parse_obj({"query": obj.get("query")})
-        return _obj
+        return YTSearchRequest.parse_obj({"query": obj.get("query")})

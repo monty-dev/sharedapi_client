@@ -71,5 +71,4 @@ class MelanieModelsSharedapiTwitterScreenNameFluffyRef(BaseModel):
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterScreenNameFluffyRef.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterScreenNameFluffyRef.parse_obj({"url": obj.get("url"), "url_type": obj.get("url_type")})
-        return _obj
+        return MelanieModelsSharedapiTwitterScreenNameFluffyRef.parse_obj({"url": obj.get("url"), "url_type": obj.get("url_type")})

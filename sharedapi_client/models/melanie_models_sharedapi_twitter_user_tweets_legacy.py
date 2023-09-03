@@ -284,7 +284,7 @@ class MelanieModelsSharedapiTwitterUserTweetsLegacy(BaseModel):
         if not isinstance(obj, dict):
             return MelanieModelsSharedapiTwitterUserTweetsLegacy.parse_obj(obj)
 
-        _obj = MelanieModelsSharedapiTwitterUserTweetsLegacy.parse_obj(
+        return MelanieModelsSharedapiTwitterUserTweetsLegacy.parse_obj(
             {
                 "protected": obj.get("protected"),
                 "can_dm": obj.get("can_dm"),
@@ -320,4 +320,3 @@ class MelanieModelsSharedapiTwitterUserTweetsLegacy(BaseModel):
                 "verified_type": obj.get("verified_type"),
             },
         )
-        return _obj
